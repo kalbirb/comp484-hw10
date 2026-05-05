@@ -47,6 +47,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.happiness--;
       // Decrease pet weight
       pet_info.weight--;
+      petWarning();
       $('.pet-comment').text("Pant...");
       $('.pet-avatar').text(petAscii.sad);
       checkAndUpdatePetInfoInHtml();
@@ -123,7 +124,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 // HW 10 Requirements
 
 document.querySelector('#hello').addEventListener('click', () => {
-  console.log('Take of your Pets');
+  console.log('Take care of your Pets');
 });
 
 document.querySelector('#dante').addEventListener('click', logWarning);
@@ -211,7 +212,7 @@ function filterMessages(messages, filters) {
       return false;
     }
 
-    // Filter by regex
+    // Filter by regex(not real regex as the regex is handled in the filter not in the string)
     if (filters.regex) {
       const regex = new RegExp(filters.regex, "i");
       if (!regex.test(msg.text)) return false;
